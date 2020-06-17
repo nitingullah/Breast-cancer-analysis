@@ -28,7 +28,7 @@ The dataset consists of various attributes of the Diagnosed cell.
 
  Visualization the distribution of the output variable among the dataset.
 
-![](Images/1.png)
+![Breast-cancer-analysis/](images/1.png)
 
 The distribution is in the ratio 60 to 40 for the variable. The accuracy for the M class of output variable might be high as compared to B class since the number of observation are fewer for B as compared to M.
 
@@ -37,10 +37,10 @@ The distribution is in the ratio 60 to 40 for the variable. The accuracy for the
 # The Attributes characteristics for both the classes of output variable for classification 
 
 
-![](Images/2.png)
-![](Images/3.png)
-![](Images/4.png)
-![](Images/5.png)
+![Breast-cancer-analysis/](images/2.png)
+![Breast-cancer-analysis/](images/3.png)
+![Breast-cancer-analysis/](images/4.png)
+![Breast-cancer-analysis/](images/5.png)
 
 The texture_mean  attributes has significant overlap as compared to other attributes hence its not a good variable for classification.
 
@@ -50,7 +50,7 @@ The texture_mean  attributes has significant overlap as compared to other attrib
 
 # Correlation Matrix
 
-![](Images/6.png)
+![Breast-cancer-analysis/](images/6.png)
 
 
 Some of the attributes has high correlation and hence we will be using PCA in order to deal with high correlation and reduce dimensionality.
@@ -61,7 +61,7 @@ Some of the attributes has high correlation and hence we will be using PCA in or
 # Using PCA and the components explain the Variance in the dataset.
 
 
-![](Images/7.png)
+![Breast-cancer-analysis/](images/7.png)
 
 
 
@@ -78,7 +78,7 @@ The first component explains the maximum variability of the dataset as compared 
 
 
 
-![](Images/8.png)
+![Breast-cancer-analysis/](images/8.png)
 
 
 
@@ -94,7 +94,7 @@ The accuracy of the model is good and the misclassification rate is  fairly low 
 
 
 
-![](Images/9.png)
+![Breast-cancer-analysis/](images/9.png)
 
 
 As you can see from the ROC curve that the fasle positive rate is almost zero. This is very important since in the medical domains the False positive and False Negative plays an important role since if the cancer is detected and the patient actually has Breast cancer might work but if the patient actually has Breast cancer and the model output's a False negative than the life of the person will be in danger.
