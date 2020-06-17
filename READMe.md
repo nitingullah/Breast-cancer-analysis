@@ -1,11 +1,11 @@
 # Breast Cancer Analysis
 ###### Author - Nitin Gullah 
 
-Predicting breast cancer based on various atributes caputred in the breast images
+Predicting breast cancer based on various attributes captured in the breast images
 
 
 # Introduction
-Breast cancer is cancer that forms in the cells of the breasts.After skin cancer, breast cancer is the most common cancer diagnosed in women in the United States. Breast cancer can occur in both men and women, but it's far more common in women.
+Breast cancer is type of cancer that forms in the cells of the breasts. After skin cancer, breast cancer is the most common cancer diagnosed in women in the United States. Breast cancer can occur in both men and women, but it's far more common in women.
 
 # Diagnosis
 A breast fine needle aspiration (FNA) removes some fluid or cells from a breast lesion (a cyst, lump, sore or swelling) with a fine needle similar to that used for blood tests. The sample of fluid or cells (or tissue) is examined by a specialist doctor
