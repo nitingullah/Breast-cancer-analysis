@@ -19,21 +19,21 @@ from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import GridSearchCV
 
 #%% import dataset 
-data = pd.read_csv("/Users/ayushsharma/repos/GIT/Breast-Cancer-Analysis/data.csv")
+df = pd.read_csv("../input/breast-cancer-wisconsin-data/Breast-Cancer-Analysis/data.csv")
 
 # Violin Plot
 
-# ax = sns.violinplot(x = "diagnosis", y = "radius_mean" , hue = "concavity_mean" , data = data , split = True)
+# ax = sns.violinplot(x = "diagnosis", y = "radius_mean" , hue = "concavity_mean" , data = df , split = True)
 
-data.head()
+df.head()
 # Decribing data - statistics features
-data.describe()
+df.describe()
 
 
 
 ## to figure out the integrity of the dataset
-null_count = data.isnull().sum()
-percentage = null_count / len(data) *100
+null_count = df.isnull().sum()
+percentage = null_count / len(df) *100
 
 plt.figure( figsize=(4,4) )
 percentage.plot( kind='bar',label='the percentage of NULL values' )
@@ -43,7 +43,7 @@ plt.show( )
 
 
 # to check the distribution of the diagnose feature
-label = data[ 'diagnosis' ]
+label = df['diagnosis']
 plt.figure( figsize=[10,5] )
 plt.subplot(121)
 plt.pie( x= label.value_counts(),labels=label.unique(),colors=['b','r'],explode=[0.1,0.1],autopct='%.2f' )
@@ -57,13 +57,12 @@ plt.show()
 
 
 # As you can see there are  columns, like "id" and "Unnamed: 32". Let's drop them. Also We need to change categorical data to numeric data.
-data.drop(['Unnamed: 32',"id"], axis=1, inplace=True)
-data.diagnosis = [1 if each == "M" else 0 for each in data.diagnosis]
-
+df.drop(['Unnamed: 32',"id"], axis=1, inplace=True)
+df['diagnosis']=df['diagnosis'].map({'M':1, 'B':0})
 
 # to visualize the distribution of different labels
-B = data[ data['diagnosis']==1 ]
-M = data[ data['diagnosis']==0 ]
+B = df[ df['diagnosis']==1 ]
+M = df[ df['diagnosis']==0 ]
 def plot_distribution ( feature ):
     global B
     global M
@@ -94,23 +93,19 @@ mask[np.triu_indices_from(mask)] = True
 sns.heatmap(corr,vmin=-1,vmax=1,fmt = ".1f",annot=True,cmap="coolwarm", mask=mask, square=True)
 
 # Dropping variables due to high correaltion between variables.
-data=data.drop(['area_mean', 'perimeter_mean', 'radius_worst', 'area_worst', 'perimeter_worst','texture_worst','concavity_mean','perimeter_se', 'area_se'],axis=1)
-
-
-
-# Train and test split
-x_train, x_test, y_train, y_test = train_test_split(x_data,y, test_size = 0.3, random_state = 1)
-
+df=df.drop(['area_mean', 'perimeter_mean', 'radius_worst', 'area_worst', 'perimeter_worst','texture_worst','concavity_mean','perimeter_se', 'area_se'],axis=1)
 
 # Seperating dependant and indepedant variables
 y = data.diagnosis.values
-x_data = data.drop(['diagnosis'], axis=1)
+x_df = df.drop(['diagnosis'], axis=1)
+
+# Train and test split
+x_train, x_test, y_train, y_test = train_test_split(x_df,y, test_size = 0.3, random_state = 1)
 
 
 # to normalize the dataset with standardscale
 conv = StandardScaler()
-std_data = conv.fit_transform( x_data )
-
+std_data = conv.fit_transform( x_df )
 
 
 # use PCA to reduce dimensionality
