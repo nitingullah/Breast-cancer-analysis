@@ -13,7 +13,7 @@ A fine needle aspiration (FNA) removes some fluid or cells from a breast lesion 
 # About the Data
 Features are computed from a digitized image of a fine needle aspirate (FNA) of a breast mass.  They describe characteristics of the cell nuclei present in the image.
 
-![Breast-cancer-analysis/](images/0dataset.jpg)
+![Breast-cancer-analysis/](images/dataset.jpg)
 
 
 # Features Importance
