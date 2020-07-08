@@ -1,5 +1,4 @@
 # Breast Cancer Analysis
-###### Author - Nitin Gullah 
 
 Predicting breast cancer based on various attributes captured in the breast images
 
