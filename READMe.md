@@ -27,7 +27,8 @@ The dataset consists of various attributes of the Diagnosed cell.
 
  Visualization the distribution of the output variable among the dataset.
 
-![Breast-cancer-analysis/](images/1.png)
+![Breast-cancer-analysis/](images/num_diagnosis.JPG)
+![Breast-cancer-analysis/](images/percent_diagnosis.JPG)
 
 The distribution is in the ratio 60 to 40 for the variable. The accuracy for the M class of output variable might be high as compared to B class since the number of observation are fewer for B as compared to M.
 
